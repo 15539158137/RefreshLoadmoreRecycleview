@@ -9,6 +9,15 @@ import android.view.MotionEvent;
 
 public class RefreshRecycleview extends RecyclerView {
     RefreshTouchEvent refreshTouchEvent;
+    boolean isNeedLoadMore;
+
+    public void setNeedLoadMore(boolean needLoadMore) {
+        isNeedLoadMore = needLoadMore;
+    }
+
+    public boolean isNeedLoadMore() {
+        return isNeedLoadMore;
+    }
 
     public void setRefreshTouchEvent(RefreshTouchEvent refreshTouchEvent) {
         this.refreshTouchEvent = refreshTouchEvent;
@@ -34,6 +43,7 @@ public class RefreshRecycleview extends RecyclerView {
 
     public RefreshRecycleview(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
+        isNeedLoadMore=true;
     }
 
     public RefreshRecycleview(Context context, @Nullable AttributeSet attrs, int defStyle) {
@@ -103,9 +113,11 @@ public class RefreshRecycleview extends RecyclerView {
                     refreshTouchEvent.onRefrshStart();
                 }
                 if (startRawY - ev.getRawY() > 1.5 * itemHeight) {
-
+                    //需要加载更多才会出现
+if(isNeedLoadMore){
                     isLoadmore = true;
                     refreshTouchEvent.onLoadmoreStart();
+}
                 }
             }
 

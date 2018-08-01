@@ -2,11 +2,14 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     >
 
     <com.dxxx.refreshloadmorerecycleview.recycleview.Refresh_Loadmore_Layout
+        xmlns:refreshrecycleview="http://schemas.android.com/apk/res-auto"
+        refreshrecycleview:isNeedLoadMore="false"
         android:id="@+id/refresh"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

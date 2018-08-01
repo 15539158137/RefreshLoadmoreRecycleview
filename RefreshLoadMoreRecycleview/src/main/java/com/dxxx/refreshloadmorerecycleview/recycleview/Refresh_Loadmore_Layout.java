@@ -1,6 +1,7 @@
 package com.dxxx.refreshloadmorerecycleview.recycleview;
 
 import android.content.Context;
+import android.content.res.TypedArray;
 import android.os.Build;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -37,23 +38,32 @@ public class Refresh_Loadmore_Layout extends FrameLayout {
     RelativeLayout foot;
     TextView text_foot;
     TextView text_heard;
-
+//是否需要加载更多的数值
+    boolean needLoadMore;
     public Refresh_Loadmore_Layout(@NonNull Context context) {
         super(context);
     }
 
     public Refresh_Loadmore_Layout(@NonNull Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
+        TypedArray typedArray=context.obtainStyledAttributes(attrs,R.styleable.RefreshRecycleview);
+        needLoadMore=typedArray.getBoolean(R.styleable.RefreshRecycleview_isNeedLoadMore,true);
         initView();
     }
 
     public Refresh_Loadmore_Layout(@NonNull Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
+        TypedArray typedArray=context.obtainStyledAttributes(attrs,R.styleable.RefreshRecycleview);
+        needLoadMore=typedArray.getBoolean(R.styleable.RefreshRecycleview_isNeedLoadMore,true);
+        initView();
     }
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     public Refresh_Loadmore_Layout(@NonNull Context context, @Nullable AttributeSet attrs, int defStyleAttr, int defStyleRes) {
         super(context, attrs, defStyleAttr, defStyleRes);
+        TypedArray typedArray=context.obtainStyledAttributes(attrs,R.styleable.RefreshRecycleview);
+        needLoadMore=typedArray.getBoolean(R.styleable.RefreshRecycleview_isNeedLoadMore,true);
+        initView();
     }
 
     private void initView() {
@@ -67,6 +77,8 @@ public class Refresh_Loadmore_Layout extends FrameLayout {
         // heard.setPadding(0,170,0,0);
         refreshRecycleview = view.findViewById(R.id.recycle);
         refreshRecycleview.addItemDecoration(new RecycleviewDic(10));
+        //设置是否需要加载更多
+            refreshRecycleview.setNeedLoadMore(needLoadMore);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
         refreshRecycleview.setLayoutManager(linearLayoutManager);
 

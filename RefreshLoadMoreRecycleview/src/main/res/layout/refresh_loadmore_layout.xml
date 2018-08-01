@@ -3,8 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/darker_gray"
-    tools:context=".MainActivity">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@android:color/darker_gray">
 
     <RelativeLayout
         android:id="@+id/heard"
@@ -13,36 +13,36 @@
         android:background="#ffffff">
 
         <TextView
-            android:textSize="15.0sp"
             android:id="@+id/text_heard"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:text="头部"
-            android:textColor="#666666" />
+            android:textColor="#666666"
+            android:textSize="15.0sp" />
     </RelativeLayout>
 
     <com.dxxx.refreshloadmorerecycleview.recycleview.RefreshRecycleview
-        android:layout_below="@+id/heard"
-        android:layout_above="@+id/foot"
         android:id="@+id/recycle"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:layout_above="@+id/foot"
+        android:layout_below="@+id/heard" />
 
     <RelativeLayout
         android:id="@+id/foot"
-        android:layout_alignParentBottom="true"
         android:layout_width="match_parent"
         android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
         android:background="#ffffff">
 
         <TextView
-            android:textSize="15.0sp"
             android:id="@+id/text_foot"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:text="尾巴"
-            android:textColor="#666666" />
+            android:textColor="#666666"
+            android:textSize="15.0sp" />
     </RelativeLayout>
 </RelativeLayout>
