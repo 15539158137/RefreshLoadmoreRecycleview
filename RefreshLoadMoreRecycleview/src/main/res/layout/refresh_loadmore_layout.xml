@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/darker_gray"
+    tools:context=".MainActivity">
+
+    <RelativeLayout
+        android:id="@+id/heard"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#ffffff">
+
+        <TextView
+            android:textSize="15.0sp"
+            android:id="@+id/text_heard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="头部"
+            android:textColor="#666666" />
+    </RelativeLayout>
+
+    <com.dxxx.refreshloadmorerecycleview.recycleview.RefreshRecycleview
+        android:layout_below="@+id/heard"
+        android:layout_above="@+id/foot"
+        android:id="@+id/recycle"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <RelativeLayout
+        android:id="@+id/foot"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#ffffff">
+
+        <TextView
+            android:textSize="15.0sp"
+            android:id="@+id/text_foot"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="尾巴"
+            android:textColor="#666666" />
+    </RelativeLayout>
+</RelativeLayout>
