@@ -1,5 +1,5 @@
 # RefreshLoadmoreRecycleview
- <com.dxxx.refreshloadmorerecycleview.recycleview.Refresh_Loadmore_Layout
+       <com.dxxx.refreshloadmorerecycleview.recycleview.Refresh_Loadmore_Layout
         xmlns:refreshrecycleview="http://schemas.android.com/apk/res-auto"
         refreshrecycleview:isNeedLoadMore="false"
         android:id="@+id/refresh"
@@ -10,7 +10,7 @@
         
         
 #
-final SimpleRecycleviewAdater simpleRecycleviewAdater = new SimpleRecycleviewAdater(all, MainActivity.this);
+        final SimpleRecycleviewAdater simpleRecycleviewAdater = new SimpleRecycleviewAdater(all, MainActivity.this);
         refresh_loadmore_layout.setAdapter(simpleRecycleviewAdater);
         refresh_loadmore_layout.setItemDecoration(20);
         refresh_loadmore_layout.setRefreshTouchEvent(new RefreshRecycleview.RefreshTouchEvent() {
