@@ -25,6 +25,18 @@ public class Refresh_Loadmore_Layout extends FrameLayout {
     RefreshRecycleview.RefreshTouchEvent refreshTouchEvent;
     RecyclerView.Adapter adapter;
 
+    //间距
+    private int itemDecoration;
+
+    /**
+     *
+     * @param itemDecoration 间隔设置
+     */
+    public void setItemDecoration(int itemDecoration) {
+        this.itemDecoration = itemDecoration;
+        refreshRecycleview.addItemDecoration( new RecycleviewDic(itemDecoration));
+    }
+
     public void setAdapter(RecyclerView.Adapter adapter) {
         this.adapter = adapter;
         refreshRecycleview.setAdapter(adapter);
@@ -76,7 +88,7 @@ public class Refresh_Loadmore_Layout extends FrameLayout {
         foot.setVisibility(View.GONE);
         // heard.setPadding(0,170,0,0);
         refreshRecycleview = view.findViewById(R.id.recycle);
-        refreshRecycleview.addItemDecoration(new RecycleviewDic(10));
+       // refreshRecycleview.addItemDecoration(new RecycleviewDic(10));
         //设置是否需要加载更多
             refreshRecycleview.setNeedLoadMore(needLoadMore);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());

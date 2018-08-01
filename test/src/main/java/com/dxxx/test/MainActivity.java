@@ -20,7 +20,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         handler = new Handler();
-        // heard.setPadding(0,170,0,0);
         final Refresh_Loadmore_Layout refresh_loadmore_layout = (Refresh_Loadmore_Layout) findViewById(R.id.refresh);
         all = new ArrayList<>();
         for (int i = 0; i < 5; i++) {
@@ -28,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
         }
         final SimpleRecycleviewAdater simpleRecycleviewAdater = new SimpleRecycleviewAdater(all, MainActivity.this);
         refresh_loadmore_layout.setAdapter(simpleRecycleviewAdater);
+        refresh_loadmore_layout.setItemDecoration(20);
         refresh_loadmore_layout.setRefreshTouchEvent(new RefreshRecycleview.RefreshTouchEvent() {
             @Override
             public void onRefrshStart() {
